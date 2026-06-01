@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Urban Ecology and Immigration | Heat Island Effect</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <img src="assets/urban-heat-hero.png" alt="Urban neighborhood with heat-map colors showing hotter pavement and cooler green space">
+      <div class="hero__overlay">
+        <p class="eyebrow">Cross-Curricular Pilot</p>
+        <h1>Urban Ecology and Immigration: The Heat Island Effect</h1>
+        <p class="lede">A simple interactive website about how city design, green space, and environmental inequality affect heat exposure in immigrant communities.</p>
+      </div>
+    </header>
+
+    <main>
+      <nav class="tabs" aria-label="Project sections">
+        <button class="tab is-active" data-tab="intro">Intro</button>
+        <button class="tab" data-tab="literature">Research</button>
+        <button class="tab" data-tab="data">Data</button>
+        <button class="tab" data-tab="conclusion">Conclusion</button>
+      </nav>
+
+      <section id="intro" class="panel is-active" tabindex="0">
+        <div class="section-head">
+          <p class="label">Topic overview</p>
+          <h2>Heat is not the same everywhere.</h2>
+          <p>Urban heat islands form when pavement, dark roofs, traffic, and dense buildings absorb and re-radiate heat. Communities with fewer trees and more impervious surfaces can experience higher temperatures than nearby greener neighborhoods.</p>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <h3>Research Question</h3>
+            <p>How do temperature patterns in urban heat islands overlap with immigrant communities, green-space access, and respiratory health risks?</p>
+          </article>
+          <article class="card">
+            <h3>Why It Matters</h3>
+            <p>Heat exposure can worsen asthma, dehydration, and air-quality problems. This topic connects climate science to real neighborhoods and the people who live there.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="literature" class="panel" tabindex="0">
+        <div class="section-head">
+          <p class="label">Existing research</p>
+          <h2>What our research showed</h2>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>Urban Form</h3>
+            <p>Asphalt, concrete, and building density store heat during the day and release it at night. Tree canopy and parks cool neighborhoods through shade and evapotranspiration.</p>
+          </article>
+          <article class="card">
+            <h3>Environmental Justice</h3>
+            <p>Some neighborhoods have fewer trees, older housing, and less cooling infrastructure. Immigrant communities can also face language barriers during heat warnings or public-health emergencies.</p>
+          </article>
+          <article class="card">
+            <h3>Health Impacts</h3>
+            <p>Extreme heat and poor air quality can increase respiratory stress. Heat can also intensify ground-level ozone, which is connected to asthma and other breathing problems.</p>
+          </article>
+        </div>
+        <ul class="source-list">
+          <li><a href="https://www.epa.gov/heatislands" target="_blank" rel="noreferrer">EPA: Heat Island Effect</a> - used for the basic definition, causes, impacts, and cooling strategies.</li>
+          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9916317/" target="_blank" rel="noreferrer">The Impact of Urbanization on Urban Heat Island</a> - used for the connection between urbanization, surface temperature, and heat-island prediction.</li>
+        </ul>
+      </section>
+
+      <section id="data" class="panel" tabindex="0">
+        <div class="section-head compact">
+          <p class="label">Data/results - AI visual</p>
+          <h2>Heat-risk explorer</h2>
+          <p>This demo uses sample values to show how an interactive visualization could compare different cities.</p>
+        </div>
+        <div class="viz-layout">
+          <aside class="controls" aria-label="Visualization controls">
+            <label for="threshold">Risk threshold: <strong id="thresholdValue">65</strong></label>
+            <input id="threshold" type="range" min="40" max="90" value="65">
+            <label for="metric">Compare by</label>
+            <select id="metric">
+              <option value="risk">Overall heat risk</option>
+              <option value="heat">Temperature anomaly</option>
+              <option value="canopy">Low tree canopy</option>
+              <option value="asthma">Respiratory burden</option>
+            </select>
+            <p id="summary" class="summary"></p>
+          </aside>
+          <div class="chart-wrap">
+            <canvas id="heatChart" width="900" height="560" aria-label="Bar chart comparing sample city heat-risk values"></canvas>
+          </div>
+        </div>
+        <div id="cityCards" class="city-cards" aria-live="polite"></div>
+      </section>
+
+      <section id="conclusion" class="panel" tabindex="0">
+        <div class="section-head">
+          <p class="label">Conclusion and extensions</p>
+          <h2>What this means</h2>
+          <p>Heat islands are caused by materials like asphalt and concrete, but the effects are also connected to housing, work, language access, and healthcare. Solutions should focus on neighborhoods where heat exposure and vulnerability overlap.</p>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <h3>Possible Solutions</h3>
+            <p>Tree planting, reflective roofs, shade structures, cooling centers, multilingual emergency alerts, tenant protections, and traffic/pollution reduction can work together.</p>
+          </article>
+          <article class="card">
+            <h3>Contemporary Extension</h3>
+            <p>Future versions could compare local neighborhoods, add live weather data, or map cooling resources against public transit access.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
