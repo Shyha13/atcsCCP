@@ -19,7 +19,7 @@ for (var i = 0; i < tabs.length; i++) {
 }
 
 var cities = [
-  ["New York", 9.67, 22, 5.6, 25],
+  ["New York", 9.3, 22, 5.6, 25],
   ["Newark", 9.0, 9, 8.4, 28],
   ["Houston", 8.8, 14, 6.2, 22],
   ["Chicago", 8.7, 17, 6.8, 18],
