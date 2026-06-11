@@ -6,7 +6,7 @@ Static interactive website for the CCP computer science component.
 
 - Tabbed poster sections matching the CCP product categories
 - A generated hero image stored locally in `assets/`
-- A vanilla JavaScript heat-risk explorer with sample data
+- A vanilla JavaScript explorer using the eight-city dataset from the planning document
 - No build step and no external dependencies
 
 ## Run locally
@@ -28,8 +28,6 @@ Then visit `http://localhost:8000`.
 5. Choose branch `main` and folder `/root`.
 6. Save. GitHub will provide the live site URL after deployment.
 
-## Next research upgrades
+## Data shown
 
-- Replace sample city values in `script.js` with collected data.
-- Add citations with final source links.
-- Add map screenshots or neighborhood-level charts if your group collects local data.
+The chart compares UHI anomaly, tree-canopy coverage, respiratory burden, and linguistic isolation for New York, Newark, Houston, Chicago, Detroit, Phoenix, Baltimore, and Atlanta.

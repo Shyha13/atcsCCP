@@ -149,6 +149,10 @@ main {
   margin-bottom: 18px;
 }
 
+.method-head {
+  margin-top: 34px;
+}
+
 .label {
   color: var(--green);
 }

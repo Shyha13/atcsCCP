@@ -28,16 +28,16 @@
         <div class="section-head">
           <p class="label">Topic overview</p>
           <h2>Heat is not the same everywhere.</h2>
-          <p>Urban heat islands form when pavement, dark roofs, traffic, and dense buildings absorb and re-radiate heat. Communities with fewer trees and more impervious surfaces can experience higher temperatures than nearby greener neighborhoods.</p>
+          <p>Urban heat islands form when natural landscapes are replaced by roads, rooftops, and other infrastructure. Materials such as asphalt, concrete, and brick absorb solar energy during the day and slowly release it at night, while the loss of trees reduces shade and evapotranspiration.</p>
         </div>
         <div class="grid two">
           <article class="card">
             <h3>Research Question</h3>
-            <p>How do temperature patterns in urban heat islands overlap with immigrant communities, green-space access, and respiratory health risks?</p>
+            <p>How do urban heat island temperatures, tree-canopy coverage, respiratory burden, and linguistic isolation compare across U.S. cities?</p>
           </article>
           <article class="card">
             <h3>Why It Matters</h3>
-            <p>Heat exposure can worsen asthma, dehydration, and air-quality problems. This topic connects climate science to real neighborhoods and the people who live there.</p>
+            <p>Extreme heat can increase heat-related illness and respiratory problems. Communities with language barriers may also have less access to heat warnings and emergency information.</p>
           </article>
         </div>
       </section>
@@ -49,45 +49,68 @@
         </div>
         <div class="grid three">
           <article class="card">
-            <h3>Urban Form</h3>
-            <p>Asphalt, concrete, and building density store heat during the day and release it at night. Tree canopy and parks cool neighborhoods through shade and evapotranspiration.</p>
+            <h3>Thermodynamics</h3>
+            <p>Built surfaces hold solar energy as sensible heat. Vegetation uses some energy for evapotranspiration instead, which helps cool the surrounding air.</p>
           </article>
           <article class="card">
             <h3>Environmental Justice</h3>
-            <p>Some neighborhoods have fewer trees, older housing, and less cooling infrastructure. Immigrant communities can also face language barriers during heat warnings or public-health emergencies.</p>
+            <p>Research in New York City found that Hispanic and Latine neighborhoods often have more features that increase heat and fewer features that provide cooling.</p>
           </article>
           <article class="card">
-            <h3>Health Impacts</h3>
-            <p>Extreme heat and poor air quality can increase respiratory stress. Heat can also intensify ground-level ozone, which is connected to asthma and other breathing problems.</p>
+            <h3>Urban Realism</h3>
+            <p><em>The House on Mango Street</em> and other Chicano literature use crowded housing, concrete, heat, and small pieces of nature to show exclusion, confinement, and resilience.</p>
+          </article>
+        </div>
+        <div class="section-head method-head">
+          <p class="label">Methodology</p>
+          <h2>How urban heat can be measured</h2>
+        </div>
+        <div class="grid three">
+          <article class="card">
+            <h3>Air Temperature</h3>
+            <p>Land monitors and mobile routes measure the heat people directly experience, but they only cover part of a city.</p>
+          </article>
+          <article class="card">
+            <h3>Surface Temperature</h3>
+            <p>Landsat, MODIS, aircraft, and thermal sensors compare heat emitted by roads, rooftops, buildings, and vegetation across a larger area.</p>
+          </article>
+          <article class="card">
+            <h3>Latent Heat</h3>
+            <p>Thermal cameras can compare planted and non-planted surfaces to show how evapotranspiration uses energy and lowers temperatures.</p>
           </article>
         </div>
         <ul class="source-list">
           <li><a href="https://www.epa.gov/heatislands" target="_blank" rel="noreferrer">EPA: Heat Island Effect</a> - used for the basic definition, causes, impacts, and cooling strategies.</li>
-          <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9916317/" target="_blank" rel="noreferrer">The Impact of Urbanization on Urban Heat Island</a> - used for the connection between urbanization, surface temperature, and heat-island prediction.</li>
+          <li><a href="https://19january2021snapshot.epa.gov/heatislands/measuring-heat-islands_.html" target="_blank" rel="noreferrer">EPA: Measuring Heat Islands</a> - used for air- and surface-temperature methodology.</li>
+          <li><a href="https://doi.org/10.1016/j.envres.2024.118521" target="_blank" rel="noreferrer">Sprague et al. (2024)</a> - used for racial and ethnic heat-exposure disparities in New York City.</li>
+          <li><a href="https://www.mdpi.com/2413-8851/9/6/226" target="_blank" rel="noreferrer">Climate Justice and Heat Inequity (2025)</a> - used for thermal exposure and structural inequality in marginalized urban communities.</li>
+          <li><a href="https://www.mdpi.com/2071-1050/11/20/5609" target="_blank" rel="noreferrer">Santamouris (2019)</a> - used for vegetation, latent heat, and urban cooling methods.</li>
+          <li><a href="https://journals.library.ualberta.ca/crcl/index.php/crcl/article/view/11311/8636" target="_blank" rel="noreferrer">De Valdes: The House on Mango Street</a> - used for the literary connection between urban space, identity, and isolation.</li>
+          <li><a href="https://scholar.lib.vt.edu/ejournals/ALAN/v32n3/pdf/saldana.pdf" target="_blank" rel="noreferrer">Saldana: The Geography of Chicano Literature</a> - used for the idea of an urban geography of exclusion.</li>
         </ul>
       </section>
 
       <section id="data" class="panel" tabindex="0">
         <div class="section-head compact">
           <p class="label">Data/results - AI visual</p>
-          <h2>Heat-risk explorer</h2>
-          <p>This demo uses sample values to show how an interactive visualization could compare different cities.</p>
+          <h2>Eight-city data explorer</h2>
+          <p>The values below come from the city data table in our planning document. Choose a metric and adjust its highlight threshold to compare the cities.</p>
         </div>
         <div class="viz-layout">
           <aside class="controls" aria-label="Visualization controls">
-            <label for="threshold">Risk threshold: <strong id="thresholdValue">65</strong></label>
-            <input id="threshold" type="range" min="40" max="90" value="65">
+            <label for="threshold"><span id="thresholdLabel">UHI threshold</span>: <strong id="thresholdValue">8.0°F</strong></label>
+            <input id="threshold" type="range" min="5" max="10" step="0.1" value="8">
             <label for="metric">Compare by</label>
             <select id="metric">
-              <option value="risk">Overall heat risk</option>
-              <option value="heat">Temperature anomaly</option>
-              <option value="canopy">Low tree canopy</option>
-              <option value="asthma">Respiratory burden</option>
+              <option value="heat">UHI anomaly (°F)</option>
+              <option value="canopy">Tree canopy (%)</option>
+              <option value="asthma">Respiratory burden (%)</option>
+              <option value="language">Linguistic isolation (%)</option>
             </select>
             <p id="summary" class="summary"></p>
           </aside>
           <div class="chart-wrap">
-            <canvas id="heatChart" width="900" height="560" aria-label="Bar chart comparing sample city heat-risk values"></canvas>
+            <canvas id="heatChart" width="900" height="560" aria-label="Bar chart comparing eight cities across four urban heat metrics"></canvas>
           </div>
         </div>
         <div id="cityCards" class="city-cards" aria-live="polite"></div>
@@ -97,16 +120,16 @@
         <div class="section-head">
           <p class="label">Conclusion and extensions</p>
           <h2>What this means</h2>
-          <p>Heat islands are caused by materials like asphalt and concrete, but the effects are also connected to housing, work, language access, and healthcare. Solutions should focus on neighborhoods where heat exposure and vulnerability overlap.</p>
+          <p>The data shows a general inverse relationship: cities with less tree canopy tend to have higher heat anomalies and greater respiratory burdens. Newark has 9% tree canopy, a +9.0°F anomaly, and an 8.4% respiratory burden, while Atlanta has 48% canopy, a +5.0°F anomaly, and a 5.2% respiratory burden.</p>
         </div>
         <div class="grid two">
           <article class="card">
             <h3>Possible Solutions</h3>
-            <p>Tree planting, reflective roofs, shade structures, cooling centers, multilingual emergency alerts, tenant protections, and traffic/pollution reduction can work together.</p>
+            <p>Planting more trees is the main solution supported by our findings because shade and evapotranspiration cool urban surfaces. Reflective roofs and multilingual heat alerts can provide additional help.</p>
           </article>
           <article class="card">
-            <h3>Contemporary Extension</h3>
-            <p>Future versions could compare local neighborhoods, add live weather data, or map cooling resources against public transit access.</p>
+            <h3>Environmental Justice</h3>
+            <p>New York and Newark combine high heat anomalies with 25% and 28% linguistic isolation. This supports targeted greening and accessible emergency information in the most vulnerable communities.</p>
           </article>
         </div>
       </section>
