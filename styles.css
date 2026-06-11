@@ -210,6 +210,17 @@ p {
   font-weight: 700;
 }
 
+.citations p {
+  margin: 0 0 18px;
+  padding-left: 28px;
+  text-indent: -28px;
+}
+
+.citations a {
+  color: var(--teal);
+  overflow-wrap: anywhere;
+}
+
 .viz-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
